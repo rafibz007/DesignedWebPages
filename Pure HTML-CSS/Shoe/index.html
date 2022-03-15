@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NIETYPOWY UKŁAD STRONY I ZNACZNIKÓW HTML
+    SPOWODOWANY JEST ZAKAZEM UZYWANIA JS'a
+    WOBEC CZEGO RADIO INPUTY MUSIALE UMIESCIC
+    WYZEJ W DRZEWIE, ABY MOC DZIEKI NIM
+    MODYFIKOWAC POZNIEJ TLO ZDJECIA -->
+    <form class="product" action="#" method="post">
+        <input type="radio" name="color" id="blue" value="blue" checked>
+        <input type="radio" name="color" id="red" value="red">
+        <input type="radio" name="color" id="green" value="green">
+        <input type="radio" name="color" id="orange" value="orange">
+        <input type="radio" name="color" id="black" value="black">
+        
+        <figure class="image">
+            <picture>
+                <source media="(min-width: 1000px)" srcset="images/blue.png">
+                <img src="images/blue.png" alt="Nike Zoom KD 12">
+            </picture>
+            <div class="logo"></div>
+            <div class="share"></div>
+            <div class="blue bg-color"></div>
+            <div class="red bg-color"></div>
+            <div class="green bg-color"></div>
+            <div class="orange bg-color"></div>
+            <div class="black bg-color"></div>
+        </figure>
+
+        <section class="description">
+            <div class="name">
+                <h1>Nike Zoom KD 12</h1>
+                <h3>Men's Running Shoes</h3>
+            </div>
+            
+            <div class="info">
+                <h2>Product info</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eum dicta, temporibus aliquid saepe inventore earum repellendus minus iusto. Praesentium?</p>
+            </div>
+
+                <div class="color">
+                    <h2>Color</h2>
+                    <div class="inputs">
+                        <label for="blue" value="blue"></label>
+                        <label for="red" value="red"></label>
+                        <label for="green" value="green"></label>
+                        <label for="orange" value="orange"></label>
+                        <label for="black" value="black"></label>
+                    </div>
+                </div>
+
+                <div class="size">
+                    <h2>Size</h2>
+                    <div class="inputs">
+                        <input type="radio" name="size" value="11" checked>
+                        <input type="radio" name="size" value="12">
+                        <input type="radio" name="size" value="13">
+                        <input type="radio" name="size" value="14">
+                        <input type="radio" name="size" value="15">
+                    </div>
+                </div>
+
+                <div class="submit">
+                    <input type="submit" value="ADD TO CART">
+                    <h4>999,99</h4>
+                </div>
+            
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,23 @@
+section{
+    display: flex;
+    flex-direction: row;
+}
+
+section>div{
+    overflow: hidden;
+    flex: 0 1 20%;
+    transition: flex 0.25s ease-in-out 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section>div>img{
+    object-fit: cover;
+    position: relative;
+    left: 0;
+}
+
+section>div:hover{
+    flex: 0 0 60%;
+}
