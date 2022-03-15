@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body{
+    height: 100%;
+}
+
+.game{
+    width: 100%;
+    min-width: 500px;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+    background: url(images/board-bg.jpg) no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SCORE */
+.score{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 8;
+}
+
+
+/* ZOMBIE */
+.zombie{
+    position: absolute;
+    background: url(images/walkingdead.png);
+    z-index: 5;
+}
+
+.move{
+    right: 100%!important;
+}
+
+
+/* CURSOR */
+.cursor{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 29;
+    pointer-events: none;
+}
+
+.cursor::before{
+    content: "";
+    display: block;
+    padding: 3px;
+    background-color: red;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.cursor::after{
+    content: "";
+    display: block;
+    padding: 15px;
+    border-radius: 50%;
+    border: 3px solid white;
+    position: absolute;
+}
+
+/* LIVES */
+.lives{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 8;
+}
+
+
+/* GAME OVER */
+.gameover{
+    position: absolute;
+    padding: 1rem;
+    font-size: 4rem;
+    color: white;
+    font-weight: 900;
+    text-shadow: 2px 2px black;
+    z-index: 20;
+    pointer-events: none;
+    text-align: center;
+}
+
+
+.end-buttons{
+    position: absolute;
+    bottom: 0;
+    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    font-weight: 900;
+    z-index: 8;
+    display: none;
+}
+
+.end-buttons>*{
+    padding: 1rem;
+    margin: 10px;
+    background-color: white;
+}
+
+.end-buttons>*:hover{
+    background-color: rgb(214, 214, 214);
+}
+
+/* NICK */
+.nick{
+    position: absolute;
+    top: 3rem;
+    left: 0;
+    padding: 1rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: 900;
+    pointer-events: none;
+    z-index: 8;
+}
+
+/* SCOREBOARD */
+.scoreboard-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.678);
+    z-index: 28;
+}
+
+.scoreboard{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    background-color: white;
+    padding: 1rem;
+    z-index: 29;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 85%;
+    height: 85%;
+
+    max-height: 600px;
+    max-width: 800px;
+
+    cursor: initial;
+    border-radius: 5px;
+}
+
+.scoreboard .record{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    align-items: center;
+    flex: 1 1 100%;
+    font-size: 0.8rem;
+}
+
+.scoreboard .record:not(:nth-child(2)){
+    border-top: 1px solid black;
+}
+
+.scoreboard .record>*{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scoreboard .close-btn{
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreboard .close-btn::after,
+.scoreboard .close-btn::before{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: white;
+    border-radius: 3px;
+    transform: rotate(45deg);
+}
+
+.scoreboard .close-btn::before{
+    transform: rotate(-45deg);
+}
+
+.scoreboard .close-btn:hover{
+    cursor: pointer;
+}
+
+.your{
+    color: rgb(201, 23, 0);
+}
+
+.pos{
+    flex: 0 0 10px;
+}
+
+/* GETTING PLAYERS NICK */
+.field{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.411);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.field input{
+    padding: 5px;
+}
+
+.field div{
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+}
+
+.field button{
+    width: 50%;
+    padding: 5px;
+    background-color: rgb(37, 110, 37);
+    color: white;
+    font-size: 1.2rem;
+    border: 0;
+    border-radius: 10px;
+}
+
+.field button:hover{
+    cursor: pointer;
+    background-color: rgb(48, 100, 48);
+}
+
+.red{
+    color: red;
+}
+

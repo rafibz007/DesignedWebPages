@@ -1,0 +1,191 @@
+:root{
+    --buttons: #83bb4b;
+    --buttons-hover: #5b8b2b;
+    --font-color: #233d4d;
+    --btn-font-color: white;
+    --bg-body-color: #f0f8ff;
+    --bg-section-color: #ffffff;
+    --error-font-color: rgb(255, 66, 66);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font-color);
+}
+
+body{
+    background-color: var(--bg-body-color);
+}
+
+
+
+
+
+/* CONTACTS */
+
+.contacts{
+    margin: 10px auto;
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+
+
+
+
+/* CONTACTS HEADER */
+
+.contacts header{
+    width: 100%;
+    min-width: 350px;
+    display: grid;
+    grid-template-areas: 
+    "label-name label-phone none"
+    "name phone submit"
+    "error error error";
+    background-color: var(--bg-section-color);
+    padding: 1rem;
+    justify-content: stretch;
+    column-gap: 0.5rem;
+    row-gap: 0.1rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.contacts header>input,
+.contacts header>button{
+    padding: 0.75rem;
+    min-width: 100px;
+}
+
+.contacts header>label{
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contacts header label[for="name"]{
+    grid-area: label-name;
+}
+
+.contacts header label[for="phone"]{
+    grid-area: label-phone;
+}
+
+.contacts header input[name="name"]{
+    grid-area: name;
+}
+
+.contacts header input[name="phone"]{
+    grid-area: phone;
+}
+
+.contacts header button{
+    grid-area: submit;
+    background-color: var(--buttons);
+    border-radius: 5px;
+    border: 0;
+    color: var(--btn-font-color);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.contacts header button:hover{
+    background-color: var(--buttons-hover);
+    cursor: pointer;
+}
+
+.contacts header .error{
+    grid-area: error;
+    color: var(--error-font-color);
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+
+
+
+
+
+/* CONTACTS LIST */
+.contacts .list{
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+    align-items: center;
+}
+
+
+.contacts .list>*{
+    width: 100%;
+    min-width: 350px;
+    padding: 1rem;
+    background-color: var(--bg-section-color);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+
+
+
+/* CONTACTS LIST RECORD */
+.contacts .list .record{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    transition: max-height 0.5s;
+    max-height: auto;
+}
+
+.contacts .list .record button{
+    width: 50px;
+    height: 50px;
+    background-color: var(--buttons);
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 1px 3px 1px 0 rgba(0, 0, 0, 0.562);
+}
+
+.contacts .list .record button>i{
+    color: var(--btn-font-color);
+    font-size: 2rem;
+}
+
+.contacts .list .record button:hover{
+    background-color: var(--buttons-hover);
+    cursor: pointer;
+}
+
+
+
+.contacts .list .record .info{
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    flex: 0 0 calc(100% - 60px);
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.contacts .list .record .name{
+    font-weight: 900;
+}
+
+
+
+/* SHADOWS */
+.contacts header,
+.contacts .list>*{
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.582);
+}
