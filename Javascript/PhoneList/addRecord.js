@@ -74,7 +74,7 @@ function checkIfValidName(nameAdd){
     if (nameAdd == ""){
         return {
             status: false,
-            message: "Podaj imie i nazwisko"
+            message: "Name and surname required"
         };
     }
 
@@ -82,14 +82,14 @@ function checkIfValidName(nameAdd){
     if (!/^[A-Za-z ]{1,}$/.test(nameAdd)){
         return {
             status: false,
-            message: "Imie lub nazwisko zawiera nielegalne znaki"
+            message: "Name or surname contains illegal characters"
         };
     }
 
     if (/[a-z]{1}[A-Z]{1}/.test(nameAdd) || /^[^A-Z]/.test(nameAdd) || /[ ]{1}[a-z]{1}/.test(nameAdd)){
         return {
             status: false,
-            message: "Imie i nazwisko muszą zaczynać się z wielkiej litery i nie mogą posiadać wielkich liter w środku"
+            message: "Name and surname must start from capital letter and cannot contain capital letters inside"
         };
     }
 
@@ -106,21 +106,21 @@ function checkIfValidPhone(phoneAdd){
     if (phoneAdd == ""){
         return{
             status: false,
-            message: "Podaj numer telefonu"
+            message: "Phone number required"
         };
     }
 
     if (/[^0-9]{1,}/.test(phoneAdd)){
         return {
             status: false,
-            message: "Numer telefonu zawiera nielegalne znaki"
+            message: "Phone number contains illegal characters"
         };
     }
 
     if (!/^[0-9]{9}$/.test(phoneAdd)){
         return {
             status: false,
-            message: "Nieodpowiednia ilość cyfr"
+            message: "Phone number must contain exactly 9 digits"
         };
     }
 

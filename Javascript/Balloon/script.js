@@ -79,7 +79,7 @@ function showDetails(event){
     contextMenu.classList.add('context-menu');
     contextMenu.style.top = event.clientY + "px";
     contextMenu.style.left = event.clientX + "px";
-    contextMenu.innerText = "Wielkość: " + Math.floor(((parseInt(ballonContainer.style.fontSize)-minSize) / (maxSize-minSize))*100) + "%";
+    contextMenu.innerText = "Size: " + Math.floor(((parseInt(ballonContainer.style.fontSize)-minSize) / (maxSize-minSize))*100) + "%";
 
     document.querySelector("body").appendChild(contextMenu);
 
