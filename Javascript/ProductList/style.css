@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* MAIN */
+main{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    min-width: 400px;
+}
+
+/* MENU POSITION */
+.menu ol.list{
+    margin:0;
+}
+
+.menu li.position{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* MENU */
+.menu{
+    padding: 3rem;
+    flex: 1 1 30%;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.menu h1{
+    font-size: 1rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.menu h1:not(:first-of-type){
+    margin-top: 2rem;
+}
+
+.menu h1 label{
+    padding-left: 10px;
+}
+
+.menu .position ol{
+    list-style: none;
+    margin-left: 4rem;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    max-height: auto;
+}
+
+.menu .position ol li{
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu .position ol li label{
+    padding-left: 10px;
+}
+
+
+/* MENU LIST HIDING */
+.menu h1 input:first-of-type{
+    margin-right: 10px;
+    appearance: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 12px;
+    height: 12px;
+    position: relative;
+    transition: all 0.5s;
+    padding: 10px;
+}
+
+.menu h1 input:first-of-type::before,
+.menu h1 input:first-of-type::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 12px;
+    height: 0;
+    background-color: black;
+    padding: 1.5px;
+    transition: all 0.25s;
+
+}
+
+.menu h1 input:first-of-type::before{
+    height: 12px;
+    width: 0;
+}
+
+.menu h1 input:first-of-type:not(:checked)::before{
+    transform: rotate(-90deg);
+}
+
+
+.hidden{
+    max-height: 0;
+    transition: all 0.25s;
+    padding: 0;
+}
+
+.hidden *{
+    max-height: 0;
+    padding: 0;
+}
+
+.visible{
+    max-height: auto;
+    transition: all 0.25s;
+}
+
+.visible *{
+    max-height: auto;
+}
+
+
+
+/* CHOICES */
+.choices{
+    flex: 1 1 70%;
+    padding: 3rem;
+    box-shadow: inset 5px 0 5px 0 rgba(0, 0, 0, 0.37);
+    white-space: nowrap
+}
+
+.choices ol{
+    list-style: none;
+}
+
+
+/* LIST MANAGEMENT */
+/* CHECKED */
+input[type="checkbox"]:not([name="hide"]):checked{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #E95420;
+    border-radius: 2px;
+    padding: 2px;
+    position: relative;
+    display: flex;
+}
+
+input[type="checkbox"]:not([name="hide"]):checked:hover{
+    background-color: #CA4100;
+}
+
+input[type="checkbox"]:not([name="hide"]):checked::after{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 12px;
+    top: 7px;
+}
+
+input[type="checkbox"]:not([name="hide"]):checked::before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 12px;
+    width: 2px;
+    left: 7px;
+}
+
+
+/* UNCHECKED */
+input[type="checkbox"]:not([name="hide"]):not(:checked){
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid grey;
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+}
+
+input[type="checkbox"]:not([name="hide"]):not(:checked):hover{
+    border: 2px solid rgb(95, 95, 95);;
+}
+
+/* PARTIALY */
+input[type="checkbox"]:checked.partialy{
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background-color: #E95420;
+    border-radius: 2px;
+    padding: 2px;
+    position: relative;
+    display: flex;
+}
+
+input[type="checkbox"]:checked.partialy:hover{
+    background-color: #CA4100;
+}
+
+input[type="checkbox"]:checked.partialy::after{
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 2px;
+    width: 12px;
+    top: 7px;
+}
+
+input[type="checkbox"]:checked.partialy::before{
+    content: "";
+    display: none;
+}

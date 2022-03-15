@@ -1,0 +1,62 @@
+{
+	"ProduktyA" : [
+	    {
+		    "Samochody" : [
+                { "name": "Fiat" },
+                { "name": "BMW" },
+                { "name": "Volkswagen" },
+                { "name": "Opel" },
+                { "name": "Mazda"},
+                { "name": "Mazda"}
+            ]
+	    },
+	    {
+		    "Słodycze" : [ 
+                { "name": "Czekolada" }, 
+                { "name": "Cukierki" },
+                { "name": "Żelki" },
+                { "name": "Ciastka" },
+                { "name": "Krakersy" },
+                { "name": "Chrupki kukurydziane"}
+            ]
+	    },
+        {
+			"Owoce" : [
+				{ "name": "Grejpfrut" },
+				{ "name": "Cytryna" },
+				{ "name": "Winogrona" }
+			]
+		},
+        {
+			"Pieczywo" : [
+				{ "name": "Bułka" }, 
+				{ "name": "Chleb żytni" },
+				{ "name": "Kajzerka" }
+			]
+		},
+	    {   
+		    "Soki" : [ 
+                { "name": "Jupi" }, 
+                { "name": "Kubuś" }, 
+                { "name": "Hoop" }
+            ]
+	    },
+        {
+            "Samoloty" : [
+                { "name": "Boeing"},
+                { "name": "Aerocar"},
+                { "name": "Beechcraft"},
+                { "name": "Caproni"}
+            ]
+        },
+        {
+            "Zabawki" : [
+            ]
+        },
+        {
+            "Samoloty" : [
+                { "name": "Jakisinny"}
+            ]
+        }
+	]
+}
