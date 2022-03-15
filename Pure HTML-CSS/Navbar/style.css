@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background: linear-gradient(rgb(63, 63, 63), rgb(59, 49, 3));
+    padding: 3rem;
+    color: rgb(212, 182, 10);
+    align-items: center;
+    position: relative;
+    min-width: 150px;
+}
+
+
+nav .logo{
+    font-size: 2rem;
+    align-self: flex-start;
+}
+
+
+nav .options{
+    display: flex;
+    align-self: right;
+    list-style: none;
+}
+
+nav .options li a{
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+nav .options li a:hover{
+    background-color: rgb(119, 99, 10);
+}
+
+
+
+/* INPUT */
+
+
+nav input{
+    display: none;
+}
+
+nav label{
+    display: none;
+}
+
+
+@media (max-width: 800px) {
+    nav .logo{
+        font-size: 1.5rem;
+    }
+    
+    /* INPUT */
+
+    nav input{
+        display: block;
+        appearance: none;
+        background: rgb(248, 244, 208);
+        width: 30px;
+        height: 30px;
+        border-radius: 3px;
+        position: relative;
+    }
+
+    nav input:hover{
+        background: rgb(245, 238, 180);
+        cursor: pointer;
+    }
+
+    nav input:checked{
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.726);
+    }
+
+    nav input::before{
+        content: "";
+        display: block;
+        background: rgb(63, 52, 15);
+        width: 25px;
+        padding: 1px 0;
+        position: absolute;
+        border-radius: 5px;
+        top: 50%;
+        left: 2.5px;
+        box-shadow: 0 -5px 0 0 rgb(63, 52, 15);
+        transition: all 0.25s;
+    }
+
+    nav input::after{
+        content: "";
+        display: block;
+        background: rgb(63, 52, 15);
+        width: 25px;
+        padding: 1px 0;
+        position: absolute;
+        border-radius: 5px;
+        top: 50%;
+        left: 2.5px;
+        box-shadow: 0 5px 0 0 rgb(63, 52, 15);
+        transition: all 0.25s;
+    }
+
+    nav input:checked::before{
+        box-shadow: 0 0 0 0 black;
+        transform: rotate(45deg);
+    }
+
+    nav input:checked::after{
+        box-shadow: 0 0 0 0 black;
+        transform: rotate(-45deg);
+    }
+
+    /* OPTIONS */
+
+    nav input + .options{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgb(59, 49, 3);
+        transform: translateY(-100%);
+        overflow: hidden;
+        transition: transform 0 ease-in-out 0.5s, visibility 0.25s ease-in-out;
+        z-index: -1;
+        visibility: hidden;
+        
+    }
+
+    nav input:checked + .options{
+        transform: translateY(0);
+        visibility: visible;
+        transition: transform 0.25s ease-in-out;
+
+    }
+
+
+    /* OPTION'S TABS */
+    nav input + .options>*{
+        border-top: 1px solid rgb(39, 39, 39);
+        overflow: hidden;
+        transition: transform 0 ease-in-out 0.5s, visibility 0.25s ease-in-out;
+        transform: translateY(-100%);
+        visibility: hidden;
+    }
+
+    nav input + .options a{
+        padding: 1rem 0 1rem 1rem;
+        width: 100%;
+        display: block;
+    }
+
+    nav input + .options a:hover{
+        width: 100%;
+        background-color: rgb(119, 99, 10);
+    }
+
+
+
+    nav input:checked + .options>*{
+        transform: translateY(0);
+        visibility: visible;
+        transition: transform 0.5s ease-in-out;
+
+    }
+
+    nav input:checked + .options>*:hover{
+        background-color: rgb(119, 99, 10);
+    }
+}
+
+
+@media (max-width: 300px){
+
+    nav{
+        padding: 3rem 1rem;
+    }
+
+    nav .logo{
+        font-size: 0.9rem;
+    }
+
+    nav input{
+        width: 20px;
+        height: 20px;
+    }
+
+    nav input::before{
+        width: 15px;
+    }
+
+    nav input::after{
+        width: 15px;
+    }
+
+    nav input:checked + .options{
+        font-size: 0.7rem;
+    }
+}

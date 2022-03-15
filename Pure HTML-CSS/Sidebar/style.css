@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    background: chartreuse;
+    justify-content: center;
+}
+
+section.menu-bar{
+    width: fit-content;
+    height: fit-content;
+    margin: 1rem;
+}
+
+/* MENU */
+.menu{
+    display: flex;
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 30vw;
+    min-width: 200px;
+    max-width: 400px;
+}
+
+.menu ul{
+    list-style: none;
+    width: 100%;
+}
+
+
+.menu a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+/* MENU TITLE */
+.menu .title{
+    color: white;
+    padding: 2rem 4rem;
+    background: rgb(218, 37, 37);
+    box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.089);
+    position: relative;
+    white-space: nowrap;
+    z-index: 1;
+    width: 100%;
+    border-bottom: 1px solid chartreuse;
+}
+
+.menu .option:hover .title{
+    cursor: pointer;
+    background: rgb(218, 83, 60);
+    overflow: visible;
+    border-bottom: 0;
+}
+
+.menu .option:hover .title::after{
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: rgb(218, 83, 60) transparent transparent transparent;
+    position: absolute;
+    bottom: -10px;
+    right: 10%;
+    z-index: 1;
+}
+
+/* MENU DROPDOWN */
+.menu .dropdown{
+    overflow: hidden;
+    transition: max-height 10s linear;
+    z-index: -3;
+    max-height: 0;
+    width: 100%;
+}
+
+.menu .option:hover .dropdown{
+    max-height: 1000vh;
+    transition: max-height 10s linear;
+}
+
+
+/* LIST OPTIONS */
+.menu .option .dropdown li a{
+    display: block;
+    background: rgb(97, 94, 94);
+    padding: 1rem;
+    padding-left: 2rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0px -10px 10px 0 rgba(0, 0, 0, 0.425);
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+.menu .option:hover .dropdown a:hover::after{
+    content: "";
+    display: block;
+    height: 50%;
+    width: 100%;
+    background: rgba(182, 181, 181, 0.247);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.menu .option:hover .dropdown a:hover::before{
+    content: "";
+    display: block;
+    height: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    
+    border-style: solid;
+    border-width: 1.5rem 0 1.5rem 10px;
+    border-color: transparent transparent transparent rgba(76, 221, 19, 1);
+}
+
+
